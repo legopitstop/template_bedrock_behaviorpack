@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:block": {
+    "description": {
+      "identifier": "MOD_ID:simple_block"
+    },
+    "components": {
+      "minecraft:loot": "loot_tables/chests/simple_dungeon.json",
+      "minecraft:destroy_time": 0.2,
+      "minecraft:explosion_resistance": 1,
+      "minecraft:map_color": "#000000",
+      "minecraft:unit_cube": {},
+      "minecraft:friction": 0.1,
+      "minecraft:breathability": "solid",
+      "minecraft:breakonpush": false,
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "MOD_ID:simple_block",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:placement_filter": {
+        "allowed_faces": ["all"],
+        "block_filter": []
+      }
+    }
+  }
+}
