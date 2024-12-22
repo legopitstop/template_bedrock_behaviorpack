@@ -1,80 +1,77 @@
 {
-  "format_version": "1.20.80",
+  "format_version": "1.21.10",
   "minecraft:block": {
     "description": {
       "identifier": "MOD_ID:rotatable_block",
-      "properties": {
-        "direction": [0, 1, 2, 3, 4, 5, 6]
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": ["minecraft:cardinal_direction"],
+          "y_rotation_offset": 0
+        }
       }
     },
     "components": {
       "minecraft:loot": "loot_tables/chests/simple_dungeon.json",
-      "minecraft:block_light_absorption": 0,
-      "minecraft:destroy_time": 1.25,
-      "minecraft:explosion_resistance": 4.2,
-      "minecraft:geometry": "geometry.wall_switch",
-      "minecraft:on_player_placing": {
-        "event": "place_direction"
+      "minecraft:light_dampening": 0,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.25
       },
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 4.2
+      },
+      "minecraft:geometry": "geometry.wall_switch",
       "minecraft:material_instances": {
         "*": {
           "texture": "MOD_ID:rotatable_block",
           "render_method": "blend"
         }
       },
-      "minecraft:entity_collision": {
+      "minecraft:collision_box": {
         "origin": [-8, 0, -8],
         "size": [16, 16, 16]
       },
-      "minecraft:pick_collision": {
+      "minecraft:selection_box": {
         "origin": [-8, 0, -8],
         "size": [16, 16, 16]
       }
     },
     "permutations": [
       {
-        "condition": "query.block_property('direction') == 0",
+        "condition": "query.block_state('direction') == 'up'",
         "components": {
-          "minecraft:rotation": [-90, 90, 0]
+          "minecraft:transformation": { "rotation": [-90, 90, 0] }
         }
       },
       {
-        "condition": "query.block_property('direction') == 1",
+        "condition": "query.block_state('direction') == 'down'",
         "components": {
-          "minecraft:rotation": [90, 90, 0]
+          "minecraft:transformation": { "rotation": [90, 90, 0] }
         }
       },
       {
-        "condition": "query.block_property('direction') == 2",
+        "condition": "query.block_state('direction') == 'north'",
         "components": {
-          "minecraft:rotation": [0, 0, 0]
+          "minecraft:transformation": { "rotation": [0, 0, 0] }
         }
       },
       {
-        "condition": "query.block_property('direction') == 3",
+        "condition": "query.block_state('direction') == 'south'",
         "components": {
-          "minecraft:rotation": [0, 180, 0]
+          "minecraft:transformation": { "rotation": [0, 180, 0] }
         }
       },
       {
-        "condition": "query.block_property('direction') == 4",
+        "condition": "query.block_state('direction') == 'east'",
         "components": {
-          "minecraft:rotation": [0, 90, 0]
+          "minecraft:transformation": { "rotation": [0, 90, 0] }
         }
       },
       {
-        "condition": "query.block_property('direction') == 5",
+        "condition": "query.block_state('direction') == 'west'",
         "components": {
-          "minecraft:rotation": [0, -90, 0]
+          "minecraft:transformation": { "rotation": [0, -90, 0] }
         }
       }
-    ],
-    "events": {
-      "place_direction": {
-        "set_block_property": {
-          "direction": "(query.cardinal_block_face_placed_on)"
-        }
-      }
-    }
+    ]
   }
 }

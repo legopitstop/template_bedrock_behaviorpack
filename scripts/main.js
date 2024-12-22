@@ -1,3 +1,8 @@
-import * as mc from "@minecraft/server";
+import { world } from "@minecraft/server";
+import { registerBlockComponents, registerItemComponents } from "./registry.js";
 
-// Do something?
+function worldInitialize(r) {
+  registerBlockComponents(r.blockComponentRegistry);
+  registerItemComponents(r.itemComponentRegistry);
+}
+world.beforeEvents.worldInitialize.subscribe(worldInitialize);
