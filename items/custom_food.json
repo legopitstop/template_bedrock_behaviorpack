@@ -2,7 +2,7 @@
   "format_version": "1.21.10",
   "minecraft:item": {
     "description": {
-      "identifier": "MOD_ID:simple_food",
+      "identifier": "mod_id:custom_food",
       "menu_category": {
         "category": "equipment",
         "group": "itemGroup.name.miscFood"
@@ -14,7 +14,7 @@
       "minecraft:use_modifiers": {
         "use_duration": 1.61
       },
-      "minecraft:icon": "MOD_ID:simple_food",
+      "minecraft:icon": "mod_id:custom",
       "minecraft:food": {
         "nutrition": 6,
         "saturation_modifier": 1.5,

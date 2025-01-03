@@ -2,7 +2,10 @@
   "format_version": "1.21.10",
   "minecraft:block": {
     "description": {
-      "identifier": "MOD_ID:rotatable_block",
+      "identifier": "mod_id:custom_rotatable",
+      "menu_category": {
+        "category": "construction"
+      },
       "traits": {
         "minecraft:placement_direction": {
           "enabled_states": ["minecraft:cardinal_direction"],
@@ -11,19 +14,24 @@
       }
     },
     "components": {
-      "minecraft:loot": "loot_tables/chests/simple_dungeon.json",
+      "minecraft:loot": "loot_tables/blocks/custom_rotatable.json",
       "minecraft:light_dampening": 0,
+      "minecraft:custom_components": ["mod_id:block"],
       "minecraft:destructible_by_mining": {
-        "seconds_to_destroy": 1.25
+        "seconds_to_destroy": 1
       },
       "minecraft:destructible_by_explosion": {
-        "explosion_resistance": 4.2
+        "explosion_resistance": 1
       },
-      "minecraft:geometry": "geometry.wall_switch",
+      "minecraft:geometry": "minecraft:geometry.full_block",
       "minecraft:material_instances": {
         "*": {
-          "texture": "MOD_ID:rotatable_block",
+          "texture": "mod_id:custom",
           "render_method": "blend"
+        },
+        "north": {
+          "texture": "stone",
+          "render_method": "opaque"
         }
       },
       "minecraft:collision_box": {

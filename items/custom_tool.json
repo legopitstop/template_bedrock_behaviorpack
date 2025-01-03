@@ -2,7 +2,7 @@
   "format_version": "1.21.10",
   "minecraft:item": {
     "description": {
-      "identifier": "MOD_ID:simple_tool",
+      "identifier": "mod_id:custom_tool",
       "menu_category": {
         "category": "equipment",
         "group": "itemGroup.name.pickaxe"
@@ -28,7 +28,7 @@
           { "items": ["minecraft:cobblestone"], "repair_amount": 1 }
         ]
       },
-      "minecraft:icon": "MOD_ID:simple_tool"
+      "minecraft:icon": "mod_id:custom"
     }
   }
 }

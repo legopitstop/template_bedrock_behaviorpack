@@ -1,5 +1,5 @@
 export class ItemComponent {
-  static typeId = "namespace:item_component";
+  static typeId = "mod_id:item_component";
 
   constructor() {
     this.onBeforeDurabilityDamage = this.onBeforeDurabilityDamage.bind(this);

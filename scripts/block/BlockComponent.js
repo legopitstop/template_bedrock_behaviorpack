@@ -1,5 +1,5 @@
 export class BlockComponent {
-  static typeId = "namespace:block_component";
+  static typeId = "mod_id:block_component";
 
   constructor() {
     this.beforeOnPlayerPlace = this.beforeOnPlayerPlace.bind(this);
